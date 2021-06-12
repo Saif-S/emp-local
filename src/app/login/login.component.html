@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="login-box">
+        <div class="title p-3">
+            <h1>Login</h1>
+        </div>
+        <div class="body">
+            <div class="row">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="email-box form-group col-md-10 offset-1">
+                        <div class="input-group col-md-6">
+                            <input type="text" formControlName="email" class="form-control"
+                                placeholder="Enter your email" 
+                                [ngClass]="{ 'is-invalid': submitted && login.email.errors }">
+                        </div>
+                        <div *ngIf="(login.email.touched || submitted) && login.email.errors" class="alerts">
+                            <div *ngIf="login.email.errors.required">Email is required</div>
+                        </div>
+                    </div>
+                    <div class="password-box form-group col-md-10 offset-1 mt-4">
+                        <div class="input-group col-md-6">
+                            <input type="password" formControlName="password" class="form-control"
+                                placeholder="Enter your password"
+                                [ngClass]="{ 'is-invalid': submitted && login.password.errors }">
+                        </div>
+                        <div *ngIf="(login.password.touched || submitted) && login.password.errors" class="alerts">
+                            <div *ngIf="login.password.errors.required">Password is required</div>
+                        </div>
+                    </div>
+                    <div *ngIf="invalidCred" class="invalid-cred mt-3 d-flex justify-content-center">
+                        Invaid Email/Password
+                    </div>
+                    <div class="login-button mt-4 d-flex justify-content-center">
+                        <button class="btn btn-success btn-block">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="register row">
+                <p class="register-link col-md-3 offset-8 mt-2" [routerLink]="['/register']">Registration?</p>
+            </div>
+        </div>
+    </div>
+</div>

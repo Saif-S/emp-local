@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #9c88ff;
+    width: 450px;
+    border-radius: 10px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: 600;
+    color: #192a56;
+}
+
+.register-link {
+    cursor: pointer;
+    color: #353b48;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.alerts{
+    padding: 5px;
+    color: #e74c3c;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.invalid-cred{
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: 600;
+}

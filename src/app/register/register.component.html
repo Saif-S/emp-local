@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="registration-box">
+        <div class="title p-2">
+            <h1>Registration</h1>
+        </div>
+        <div class="body">
+            <div class="row">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="name-box form-group col-md-10 offset-1 my-2">
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter your first name" formControlName="firstName"
+                                class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && register.firstName.errors }">
+                        </div>
+                        <div *ngIf="(register.firstName.touched || submitted) && register.firstName.errors"
+                            class="alerts">
+                            <div *ngIf="register.firstName.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+
+                    <div class="name-box form-group col-md-10 offset-1 my-2">
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter your lastName" formControlName="lastName"
+                                class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && register.lastName.errors }">
+                        </div>
+                        <div *ngIf="(register.lastName.touched || submitted) && register.lastName.errors"
+                            class="alerts">
+                            <div *ngIf="register.lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+
+                    <div class="name-box form-group col-md-10 offset-1 my-2">
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter your email" formControlName="email"
+                                class="form-control" [ngClass]="{ 'is-invalid': submitted && register.email.errors }">
+                        </div>
+                        <div *ngIf="(register.email.touched || submitted) && register.email.errors" class="alerts">
+                            <div *ngIf="register.email.errors.required">Email is required</div>
+                        </div>
+                    </div>
+
+                    <div class="name-box form-group col-md-10 offset-1 my-2">
+                        <div class="input-group">
+                            <input type="number" placeholder="Enter your age" formControlName="age" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && register.age.errors }">
+                        </div>
+                        <div *ngIf="(register.age.touched || submitted) && register.age.errors" class="alerts">
+                            <div *ngIf="register.age.errors.required">Age is required</div>
+                        </div>
+                    </div>
+
+                    <div class="name-box form-group col-md-10 offset-1 my-2">
+                        <div class="input group">
+                            <input type="number" placeholder="Enter your Mobile Number" minlength="10" maxlength="10"
+                                formControlName="mobileNumber" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && register.mobileNumber.errors }">
+                        </div>
+                        <div *ngIf="(register.mobileNumber.touched || submitted) && register.mobileNumber.errors"
+                            class="alerts">
+                            <div *ngIf="register.mobileNumber.errors.required">Mobile Number is required</div>
+                        </div>
+                    </div>
+
+                    <div class="name-box form-group col-md-10 offset-1 my-2">
+                        <div class="input-group">
+                            <input placeholder="Enter your Birthdate" max="2021-01-01" type="text"
+                                onfocus="(this.type='date')" formControlName="birthDate" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && register.birthDate.errors }">
+                        </div>
+                        <div *ngIf="(register.birthDate.touched || submitted) && register.birthDate.errors"
+                            class="alerts">
+                            <div *ngIf="register.birthDate.errors.required">Birth Date is required</div>
+                        </div>
+                    </div>
+
+                    <div class="name-box form-group col-md-10 offset-1 my-2">
+                        <div class="input-group">
+                            <input type="password" placeholder="Enter your password" formControlName="password"
+                                class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && register.password.errors }">
+                        </div>
+                        <div *ngIf="(register.password.touched || submitted) && register.password.errors"
+                            class="alerts">
+                            <div *ngIf="register.password.errors.required">Password is required</div>
+                        </div>
+                    </div>
+
+                    <div class="registration-button d-flex justify-content-center mt-4">
+                        <button class="btn btn-success">Register</button>
+                    </div>
+                </form>
+            </div>
+            <div class="login row">
+                <p class="login-link col-md-3 offset-9 mt-2 " [routerLink]="['/login']">Login?</p>
+            </div>
+        </div>
+    </div>
+</div>

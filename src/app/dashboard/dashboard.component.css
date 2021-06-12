@@ -1,0 +1,23 @@
+.navbar-brand {
+  color: #fff;
+  font-weight: 600;
+}
+
+.logout {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.alerts {
+  padding: 5px;
+  color: #e74c3c;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
